@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="tac">By creating an account, you agree to our Terms and Condition</string>
+    <string name="login">Already have an account? Login</string>
+    <string name="reg">Don\'t have account? Create now</string>
+</resources>

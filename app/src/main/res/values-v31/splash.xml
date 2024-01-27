@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.MyApp.MySplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#FFFFFF</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/dark_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.TravelBuddy</item>
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+
+    </style>
+</resources>
