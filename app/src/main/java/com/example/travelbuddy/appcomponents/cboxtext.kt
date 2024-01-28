@@ -19,6 +19,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 
+//function that holds checkbox,clickable text (login,register) and their properties
 @Composable
 fun checkbox(value:String,onTextSelected: (String) -> Unit ,oncheckedchange :(Boolean) -> Unit) {
     Row (modifier = Modifier

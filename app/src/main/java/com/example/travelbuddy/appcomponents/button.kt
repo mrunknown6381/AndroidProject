@@ -27,17 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-@Composable
-fun button(
-    text: String,
-    onClick:() -> Unit
-) {
-   Button(onClick = onClick,
-       shape = RoundedCornerShape(size = 1.dp)) {
-       Text(text = text, style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold))
-   }
-
-}
+//function that holds button and their properties
 
 @Composable
 fun textbutton(text: String,onClick: () -> Unit) {

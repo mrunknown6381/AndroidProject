@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.travelbuddy.data.rules.validator
 import com.google.firebase.auth.FirebaseAuth
-
+//it captures the event and update or changes the state
 class fpviewmodel:ViewModel() {
     var fpuistate = mutableStateOf(fpuistate())
     var allvalidationpassed = mutableStateOf(false)

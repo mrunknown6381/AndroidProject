@@ -7,6 +7,7 @@ import com.example.travelbuddy.data.rules.validator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 
+//it captures the event and update or changes the state
 class loginviewmodel :ViewModel(){
     private val Tag = regviewmodel::class.simpleName
     var loginuistate = mutableStateOf(loginuistate())

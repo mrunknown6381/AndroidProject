@@ -13,7 +13,7 @@ import com.example.travelbuddy.screen.onboardingscreen
 import com.example.travelbuddy.screen.registerscreen
 import com.example.travelbuddy.screen.termsandcondition
 import com.example.travelbuddy.screen.welcomescreen
-
+//it contains navigation graph that are used to navigate between screen
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable
 fun navgraph() {

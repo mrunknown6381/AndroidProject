@@ -1,5 +1,5 @@
 package com.example.travelbuddy.data
-
+//it holds value
 data class loginuistate (
     var email :String = "",
     var pass :String = "",

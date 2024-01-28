@@ -37,7 +37,6 @@ import com.example.travelbuddy.data.loginuievent
 import com.example.travelbuddy.ui.theme.text
 import androidx.compose.ui.tooling.preview.Preview as Preview1
 
-@Preview1
 @Composable
 fun welcomescreen(navController: NavController) {
 
@@ -48,7 +47,7 @@ fun welcomescreen(navController: NavController) {
         endY = 3000.0f
     )
     Box(
-        modifier = Modifier.fillMaxSize().background(g7), contentAlignment = Alignment.Center
+        modifier = Modifier.fillMaxSize().background(brush = g7), contentAlignment = Alignment.Center
     ) {
         Column (
             modifier = Modifier.fillMaxSize(),
@@ -71,8 +70,6 @@ fun welcomescreen(navController: NavController) {
             }, onbuttonclicked = {
                 navController.navigate(screens.Screenlogin.route)
             })
-
-
         }
     }
 

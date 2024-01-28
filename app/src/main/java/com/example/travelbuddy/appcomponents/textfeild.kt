@@ -29,6 +29,7 @@ import com.example.travelbuddy.ui.theme.text
 import com.example.travelbuddy.ui.theme.textfieldcontainer
 import com.example.travelbuddy.ui.theme.unfocusedText
 
+//function that holds textfield and their properties
 @Composable
 fun textfeild(modifier: Modifier,label:String,trailing:String,painterResource: Painter,onTextSelected: (String) -> Unit,errorStatus:Boolean = false) {
     val textval = remember {

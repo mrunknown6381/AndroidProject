@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.travelbuddy.data.dimens.indicatorsize
 
+//function that holds horizontal pager indicator are used in onboarding screen
 @Composable
 fun Pageindicator(modifier: Modifier,
                   pageSize: Int,

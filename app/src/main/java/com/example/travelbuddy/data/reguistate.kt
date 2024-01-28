@@ -1,5 +1,5 @@
 package com.example.travelbuddy.data
-
+//it holds value
 data class reguistate(
     var fname :String = "",
     var lname :String = "",

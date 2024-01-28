@@ -2,7 +2,7 @@ package com.example.travelbuddy.data
 
 import androidx.annotation.DrawableRes
 import com.example.travelbuddy.R
-
+//it holds horizontal pager data
 data class Page(
     val title: String,
     val desc: String,

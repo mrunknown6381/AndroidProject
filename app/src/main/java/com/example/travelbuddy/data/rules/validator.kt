@@ -1,5 +1,5 @@
 package com.example.travelbuddy.data.rules
-
+//it validates the all things like email,pass etc
 object validator {
     fun validatefname(fname:String):validationresult{
         return validationresult(

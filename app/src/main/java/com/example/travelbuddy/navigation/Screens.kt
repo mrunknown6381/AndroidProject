@@ -1,5 +1,5 @@
 package com.example.travelbuddy.navigation
-
+//it contains all the screens of the project
 sealed class screens(val route:String){
     object Screenonboarding : screens(route = "onboarding")
     object Screenwelcome : screens(route = "welcome")
