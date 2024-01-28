@@ -49,20 +49,21 @@ fun textbutton(text: String,onClick: () -> Unit) {
     }
 }
 
+
 @Composable
-fun textbuttonwlcm(text: String,onClick: () -> Unit,isEnabled:Boolean = false) {
-    TextButton(modifier = Modifier,onClick = onClick, elevation = ButtonDefaults.buttonElevation(
+fun textbuttonwlcm(text: String,onClick: () -> Unit,onbuttonclicked :() -> Unit) {
+    TextButton(modifier = Modifier.width(315.dp),onClick = { onbuttonclicked.invoke() }, elevation = ButtonDefaults.buttonElevation(
         defaultElevation = 10.dp,
         pressedElevation = 20.dp
-    ), enabled = isEnabled
-        ,shape = RoundedCornerShape(size = 20.dp), border = BorderStroke(0.7.dp, color = Black), colors = ButtonDefaults.buttonColors(
-        containerColor = MaterialTheme.colorScheme.onSecondaryContainer,
-        disabledContainerColor = MaterialTheme.colorScheme.primary
-    )) {
-        Text(text = text, modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp), fontSize = 30.sp, style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.background)
+    )
+        ,shape = RoundedCornerShape(size = 10.dp), border = BorderStroke(0.7.dp, color = Black), colors = ButtonDefaults.buttonColors(
+            containerColor = MaterialTheme.colorScheme.onSecondaryContainer
+
+        )) {
+        Text(text = text, modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp), fontSize = 20.sp, style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold), color = MaterialTheme.colorScheme.background)
+
     }
 }
-
 @Composable
 fun textbuttonRL(text: String,onClick: () -> Unit,onbuttonclicked :() -> Unit,isEnabled:Boolean = false) {
     TextButton(modifier = Modifier.width(315.dp),onClick = { onbuttonclicked.invoke() }, elevation = ButtonDefaults.buttonElevation(

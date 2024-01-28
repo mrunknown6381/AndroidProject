@@ -40,6 +40,7 @@ import com.example.travelbuddy.appcomponents.textfeild
 import com.example.travelbuddy.data.dimens
 import com.example.travelbuddy.data.regviewmodel
 import com.example.travelbuddy.data.reguievent
+import com.example.travelbuddy.ui.theme.text
 
 @Composable
 fun registerscreen(navController: NavController, regviewmodel: regviewmodel = viewModel()) {
@@ -111,11 +112,11 @@ fun topsection1() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                modifier = Modifier.size(42.dp),
+                modifier = Modifier.size(35.dp),
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = null
             )
-            Spacer(modifier = Modifier.width(15.dp))
+            Spacer(modifier = Modifier.width(7.dp))
             Column {
                 Text(
                     text = "Travel Buddy",
@@ -133,11 +134,11 @@ fun topsection1() {
             }
         }
         Text(
-            text = "Register",
+            text = "Create an account",
             modifier = Modifier
                 .padding(bottom = 10.dp)
                 .align(alignment = Alignment.BottomCenter),
-            style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
+            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
             color = MaterialTheme.colorScheme.primary
         )
 

@@ -114,11 +114,11 @@ private fun topsection() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                modifier = Modifier.size(42.dp),
+                modifier = Modifier.size(35.dp),
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = null
             )
-            Spacer(modifier = Modifier.width(15.dp))
+            Spacer(modifier = Modifier.width(7.dp))
             Column {
                 Text(
                     text = "Travel Buddy",
@@ -136,11 +136,11 @@ private fun topsection() {
             }
         }
         Text(
-            text = "Login",
+            text = "Login your account",
             modifier = Modifier
                 .padding(bottom = 10.dp)
                 .align(alignment = Alignment.BottomCenter),
-            style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
+            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
             color = MaterialTheme.colorScheme.primary
         )
 
