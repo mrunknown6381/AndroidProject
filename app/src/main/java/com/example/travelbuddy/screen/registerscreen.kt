@@ -66,11 +66,11 @@ fun registerscreen(navController: NavController, regviewmodel: regviewmodel = vi
                 Toast.makeText(context,"Invalid Credential",Toast.LENGTH_SHORT).show()
             }
 
-            textfeild(modifier = Modifier.fillMaxWidth(), label = "First name", trailing = "",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(reguievent.fnamechanged(it))},errorStatus = regviewmodel.reguistate.value.fnameerr)
+            textfeild(modifier = Modifier.fillMaxWidth(), label = "First name",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(reguievent.fnamechanged(it))},errorStatus = regviewmodel.reguistate.value.fnameerr)
             Spacer(modifier = Modifier.height(15.dp))
-            textfeild(modifier = Modifier.fillMaxWidth(), label = "Last name", trailing = "",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(reguievent.lnamechanged(it))},errorStatus = regviewmodel.reguistate.value.lnameerr)
+            textfeild(modifier = Modifier.fillMaxWidth(), label = "Last name",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(reguievent.lnamechanged(it))},errorStatus = regviewmodel.reguistate.value.lnameerr)
             Spacer(modifier = Modifier.height(15.dp))
-            textfeild(modifier = Modifier.fillMaxWidth(), label = "Email", trailing = "",painterResource(id = R.drawable.email), onTextSelected = {regviewmodel.onevent(reguievent.emailchanged(it))},errorStatus = regviewmodel.reguistate.value.emailerr)
+            textfeild(modifier = Modifier.fillMaxWidth(), label = "Email",painterResource(id = R.drawable.email), onTextSelected = {regviewmodel.onevent(reguievent.emailchanged(it))},errorStatus = regviewmodel.reguistate.value.emailerr)
             Spacer(modifier = Modifier.height(15.dp))
             passtextfeild(modifier = Modifier.fillMaxWidth(), label = "Password", trailing = "",painterResource(id = R.drawable.password), onTextSelected = {regviewmodel.onevent(reguievent.passchanged(it))},errorStatus = regviewmodel.reguistate.value.passerr)
             checkbox(value = stringResource(id = R.string.tac), onTextSelected = {

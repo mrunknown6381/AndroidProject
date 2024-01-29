@@ -31,7 +31,7 @@ import com.example.travelbuddy.ui.theme.unfocusedText
 
 //function that holds textfield and their properties
 @Composable
-fun textfeild(modifier: Modifier,label:String,trailing:String,painterResource: Painter,onTextSelected: (String) -> Unit,errorStatus:Boolean = false) {
+fun textfeild(modifier: Modifier,label:String,painterResource: Painter,onTextSelected: (String) -> Unit,errorStatus:Boolean = false) {
     val textval = remember {
         mutableStateOf("")
     }
@@ -53,15 +53,15 @@ fun textfeild(modifier: Modifier,label:String,trailing:String,painterResource: P
             unfocusedContainerColor = MaterialTheme.colorScheme.textfieldcontainer,
             focusedContainerColor = MaterialTheme.colorScheme.textfieldcontainer,
         ),
-        trailingIcon = {
-            TextButton(onClick = {}) {
-                Text(
-                    text = trailing,
-                    style = MaterialTheme.typography.titleMedium.copy(fontWeight =  FontWeight.Medium),
-                    color = MaterialTheme.colorScheme.primary
-                )
-            }
-        },
+//        trailingIcon = {
+//            TextButton(onClick = {}) {
+//                Text(
+//                    text = trailing,
+//                    style = MaterialTheme.typography.titleMedium.copy(fontWeight =  FontWeight.Medium),
+//                    color = MaterialTheme.colorScheme.primary
+//                )
+//            }
+//        },
         leadingIcon = {
             Icon(painter = painterResource, contentDescription = "")
         },

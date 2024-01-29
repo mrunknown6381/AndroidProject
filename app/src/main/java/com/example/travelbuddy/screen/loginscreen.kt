@@ -61,7 +61,7 @@ fun loginscreen(navController: NavController, loginviewmodel: loginviewmodel = v
             if (loginviewmodel.failure.value){
                 Toast.makeText(context,"Invalid Credential",Toast.LENGTH_SHORT).show()
             }
-            textfeild(modifier = Modifier.fillMaxWidth(), label = "Email", trailing = ""
+            textfeild(modifier = Modifier.fillMaxWidth(), label = "Email"
                 ,painterResource(id = R.drawable.email), onTextSelected = {
                     loginviewmodel.onevent(loginuievent.emailchanged(it))
                 }, errorStatus = loginviewmodel.loginuistate.value.emailerr)
@@ -69,7 +69,7 @@ fun loginscreen(navController: NavController, loginviewmodel: loginviewmodel = v
             passtextfeild(modifier = Modifier.fillMaxWidth(), label = "Password", trailing = "",
                 painterResource(id = R.drawable.password), onTextSelected = {
                     loginviewmodel.onevent(loginuievent.passchanged(it))
-                },errorStatus = loginviewmodel.loginuistate.value.passerr)
+                })
             Spacer(modifier = Modifier.height(5.dp))
             Box (modifier = Modifier
                 .padding(5.dp)
