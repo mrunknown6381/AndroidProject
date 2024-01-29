@@ -43,23 +43,17 @@ class fpviewmodel:ViewModel() {
         val auth = FirebaseAuth.getInstance()
         val email = fpuistate.value.email
         auth.sendPasswordResetEmail(email)
-            .addOnCompleteListener{task ->
-
-                if(task.isSuccessful) {
+            .addOnCompleteListener { listner ->
+                if(listner.isSuccessful){
+                    Log.d(Tag,"inside success")
+                    fpinprogress.value = false
                     success.value = true
+                }else{
+                    Log.d(Tag,"inside success else")
                     fpinprogress.value = false
-                }
-                else{
                     failure.value = true
-                    fpinprogress.value = false
                 }
             }
-//            .addOnFailureListener{
-//                Log.d(Tag,"Failure")
-//                Log.d(Tag,"${it.localizedMessage}")
-//                failure.value = true
-//                fpinprogress.value = false
-//
-//            }
+
     }
 }

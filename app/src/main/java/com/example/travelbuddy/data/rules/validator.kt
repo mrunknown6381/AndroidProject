@@ -1,4 +1,7 @@
 package com.example.travelbuddy.data.rules
+
+import java.util.regex.Pattern
+
 //it validates the all things like email,pass etc
 object validator {
     fun validatefname(fname:String):validationresult{
@@ -12,8 +15,10 @@ object validator {
         )
     }
     fun validateemail(email:String):validationresult{
-        return validationresult(
-            (!email.isNullOrEmpty())
+        val pattern = Pattern.compile(   "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}\$")
+        val match = pattern.matcher(email)
+            return validationresult(
+                match.matches()
         )
     }
     fun validatepass(pass:String):validationresult{

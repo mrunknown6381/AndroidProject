@@ -51,7 +51,7 @@ fun forgetpass(navController: NavController, fpviewmodel: fpviewmodel = viewMode
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
                 if(fpviewmodel.success.value){
-                    Toast.makeText(context,"Reset Password Success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context,"Reset Link Sent to Your Mail", Toast.LENGTH_SHORT).show()
                     navController.navigate(screens.Screenlogin.route)
                 }
                 if (fpviewmodel.failure.value){
