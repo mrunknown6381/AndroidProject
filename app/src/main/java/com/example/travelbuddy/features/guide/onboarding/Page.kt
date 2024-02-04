@@ -1,4 +1,4 @@
-package com.example.travelbuddy.data
+package com.example.travelbuddy.features.guide.onboarding
 
 import androidx.annotation.DrawableRes
 import com.example.travelbuddy.R

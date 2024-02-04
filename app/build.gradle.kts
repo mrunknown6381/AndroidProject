@@ -56,11 +56,11 @@ android {
 
 dependencies {
     //splash screen
-    implementation("androidx.core:core-splashscreen:1.0.0")
+    implementation("androidx.core:core-splashscreen:1.0.1")
     //data store
     implementation("androidx.datastore:datastore-preferences:1.0.0")
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.48.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.48.1")
     //navigation
     implementation("androidx.navigation:navigation-compose:2.7.6")
     implementation("androidx.core:core-ktx:1.12.0")
@@ -80,7 +80,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     //pager
     runtimeOnly("com.google.accompanist:accompanist-pager:0.33.2-alpha")
-    implementation("androidx.compose.material:material-icons-extended-android:1.6.0-rc01")
+    implementation("androidx.compose.material:material-icons-extended-android:1.6.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
     implementation("com.google.firebase:firebase-analytics")

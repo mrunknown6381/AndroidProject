@@ -1,8 +1,9 @@
-package com.example.travelbuddy.screen
+package com.example.travelbuddy.features.registration
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -28,83 +29,82 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.travelbuddy.R
-import com.example.travelbuddy.navigation.screens
-import com.example.travelbuddy.appcomponents.clickabletextf
-import com.example.travelbuddy.appcomponents.clickabletextl
+import com.example.travelbuddy.appcomponents.checkbox
+import com.example.travelbuddy.appcomponents.clickabletextr
 import com.example.travelbuddy.appcomponents.loadanim
 import com.example.travelbuddy.appcomponents.passtextfeild
 import com.example.travelbuddy.appcomponents.textbuttonRL
 import com.example.travelbuddy.appcomponents.textfeild
 import com.example.travelbuddy.data.dimens
-import com.example.travelbuddy.data.loginuievent
-import com.example.travelbuddy.data.loginviewmodel
-import com.example.travelbuddy.data.reguievent
-import com.example.travelbuddy.data.regviewmodel
-
+import com.example.travelbuddy.navigation.separate.routes
 
 @Composable
-fun loginscreen(navController: NavController, loginviewmodel: loginviewmodel = viewModel()) {
+fun registerscreen(navController: NavHostController, regviewmodel: regviewmodel = viewModel()) {
     val context = LocalContext.current
-    Column(modifier = Modifier
-        .fillMaxSize()
-        .background(MaterialTheme.colorScheme.background)) {
-        topsection()
-        Spacer(modifier = Modifier.height(36.dp))
-        Column (modifier = Modifier
+    Column(
+        modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = 30.dp), horizontalAlignment = Alignment.CenterHorizontally){
-            if(loginviewmodel.success.value){
-                Toast.makeText(context,"Login Success",Toast.LENGTH_SHORT).show()
-                navController.navigate(screens.Screenhome.route)
+            .background(MaterialTheme.colorScheme.background)
+    ) {
+        topsection1()
+        Spacer(modifier = Modifier.height(36.dp))
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 30.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center
+
+        ) {
+            if(regviewmodel.success.value){
+                Toast.makeText(context,"Registration Success",Toast.LENGTH_SHORT).show()
+                navController.navigate(routes.Screenlogin.routes)
             }
-            if (loginviewmodel.failure.value){
+            if (regviewmodel.failure.value){
                 Toast.makeText(context,"Invalid Credential",Toast.LENGTH_SHORT).show()
             }
-            textfeild(modifier = Modifier.fillMaxWidth(), label = "Email"
-                ,painterResource(id = R.drawable.email), onTextSelected = {
-                    loginviewmodel.onevent(loginuievent.emailchanged(it))
-                }, errorStatus = loginviewmodel.loginuistate.value.emailerr)
+
+            textfeild(modifier = Modifier.fillMaxWidth(), label = "First name",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(
+                reguievent.fnamechanged(it))},errorStatus = regviewmodel.reguistate.value.fnameerr)
             Spacer(modifier = Modifier.height(15.dp))
-            passtextfeild(modifier = Modifier.fillMaxWidth(), label = "Password", trailing = "",
-                painterResource(id = R.drawable.password), onTextSelected = {
-                    loginviewmodel.onevent(loginuievent.passchanged(it))
-                })
-            Spacer(modifier = Modifier.height(5.dp))
-            Box (modifier = Modifier
-                .padding(5.dp)
-                .fillMaxWidth()
-                .fillMaxHeight(0.05f), contentAlignment = Alignment.CenterEnd){
-                clickabletextf(value = String(), onTextSelected = {
-                    navController.navigate(screens.Screenforget.route)
-                })
-            }
-            Spacer(modifier = Modifier.height(25.dp))
-            textbuttonRL(text = "Login", onClick = {
+            textfeild(modifier = Modifier.fillMaxWidth(), label = "Last name",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(
+                reguievent.lnamechanged(it))},errorStatus = regviewmodel.reguistate.value.lnameerr)
+            Spacer(modifier = Modifier.height(15.dp))
+            textfeild(modifier = Modifier.fillMaxWidth(), label = "Email",painterResource(id = R.drawable.email), onTextSelected = {regviewmodel.onevent(
+                reguievent.emailchanged(it))},errorStatus = regviewmodel.reguistate.value.emailerr)
+            Spacer(modifier = Modifier.height(15.dp))
+            passtextfeild(modifier = Modifier.fillMaxWidth(), label = "Password", trailing = "",painterResource(id = R.drawable.password), onTextSelected = {regviewmodel.onevent(
+                reguievent.passchanged(it))},errorStatus = regviewmodel.reguistate.value.passerr)
+            checkbox(value = stringResource(id = R.string.tac), onTextSelected = {
+                navController.navigate(routes.Screentac.routes)
+            }, oncheckedchange = {regviewmodel.onevent(reguievent.termsclicked(it))})
+            Spacer(modifier = Modifier.height(10.dp))
+            textbuttonRL(text = "Register", onClick = {
             }, onbuttonclicked = {
-                loginviewmodel.onevent(loginuievent.loginbtnclicked)
-            },isEnabled = loginviewmodel.allvalidationpassed.value)
+                regviewmodel.onevent(reguievent.regbtnclicked)
+            },isEnabled = regviewmodel.allvalidationpassed.value)
             Box (modifier = Modifier
                 .fillMaxWidth()
                 .fillMaxHeight(0.8f), contentAlignment = Alignment.Center){
-               clickabletextl(value = stringResource(id = R.string.reg), onTextSelected = {
-                   navController.navigate(screens.Screenregister.route)
+               clickabletextr(value = stringResource(id = R.string.login), onTextSelected = {
+                   navController.navigate(routes.Screenlogin.routes)
                })
             }
-            if (loginviewmodel.signininprogress.value){
-                loadanim()
-            }
+           if (regviewmodel.signupinprogress.value){
+               loadanim()
+           }
         }
     }
+
 }
 
 @Composable
-private fun topsection() {
+fun topsection1() {
     Box(modifier = Modifier, contentAlignment = Alignment.TopCenter) {
         Image(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(0.5f),
+                .fillMaxHeight(0.4f),
             contentScale = ContentScale.FillBounds,
             painter = painterResource(id = R.drawable.shape),
             contentDescription = null
@@ -136,7 +136,7 @@ private fun topsection() {
             }
         }
         Text(
-            text = "Login your account",
+            text = "Create an account",
             modifier = Modifier
                 .padding(bottom = 10.dp)
                 .align(alignment = Alignment.BottomCenter),
@@ -146,3 +146,4 @@ private fun topsection() {
 
     }
 }
+

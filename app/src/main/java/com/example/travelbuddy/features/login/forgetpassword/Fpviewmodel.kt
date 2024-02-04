@@ -1,4 +1,4 @@
-package com.example.travelbuddy.data
+package com.example.travelbuddy.features.login.forgetpassword
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
@@ -13,7 +13,7 @@ class fpviewmodel:ViewModel() {
     var success = mutableStateOf(false)
     var failure = mutableStateOf(false)
     private val Tag = fpviewmodel::class.simpleName
-    fun onevent(event:fpuievent){
+    fun onevent(event: fpuievent){
         when(event){
             is fpuievent.emailchanged -> {
                 fpuistate.value = fpuistate.value.copy(

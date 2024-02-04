@@ -5,15 +5,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import com.example.travelbuddy.navigation.navgraph
+import androidx.navigation.compose.rememberNavController
+import com.example.travelbuddy.navigation.separate.navgraphex
 import com.example.travelbuddy.ui.theme.TravelBuddyTheme
 
 
@@ -29,12 +25,8 @@ class MainActivity : ComponentActivity() {
             TravelBuddyTheme {
                 // A surface container using the 'background' color from the theme
                 Surface {
-
-
-
-
-                       navgraph()
-
+                       val navController = rememberNavController()
+                        navgraphex(navController = navController)
                 }
             }
         }

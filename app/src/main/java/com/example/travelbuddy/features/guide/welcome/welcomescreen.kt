@@ -1,18 +1,13 @@
-package com.example.travelbuddy.screen
+package com.example.travelbuddy.features.guide.welcome
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -20,22 +15,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.travelbuddy.R
-import com.example.travelbuddy.appcomponents.loadanim
-import com.example.travelbuddy.appcomponents.textbuttonRL
-import com.example.travelbuddy.navigation.screens
 import com.example.travelbuddy.appcomponents.textbuttonwlcm
 import com.example.travelbuddy.data.dimens
-import com.example.travelbuddy.data.loginuievent
-import com.example.travelbuddy.ui.theme.text
-import androidx.compose.ui.tooling.preview.Preview as Preview1
+import com.example.travelbuddy.navigation.separate.routes
 
 @Composable
 fun welcomescreen(navController: NavController) {
@@ -63,12 +50,12 @@ fun welcomescreen(navController: NavController) {
             Spacer(modifier = Modifier.height(350.dp))
             textbuttonwlcm(text = "Register", onClick = {
             }, onbuttonclicked = {
-                navController.navigate(screens.Screenregister.route)
+                navController.navigate(routes.Screenregister.routes)
             })
             Spacer(modifier = Modifier.height(30.dp))
             textbuttonwlcm(text = "Login", onClick = {
             }, onbuttonclicked = {
-                navController.navigate(screens.Screenlogin.route)
+                navController.navigate(routes.Screenlogin.routes)
             })
         }
     }

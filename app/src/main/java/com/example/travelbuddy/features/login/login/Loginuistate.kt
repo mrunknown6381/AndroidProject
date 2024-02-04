@@ -1,4 +1,4 @@
-package com.example.travelbuddy.data
+package com.example.travelbuddy.features.login.login
 //it holds value
 data class loginuistate (
     var email :String = "",

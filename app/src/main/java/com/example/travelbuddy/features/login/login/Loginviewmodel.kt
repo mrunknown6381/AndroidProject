@@ -1,8 +1,9 @@
-package com.example.travelbuddy.data
+package com.example.travelbuddy.features.login.login
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import com.example.travelbuddy.features.registration.regviewmodel
 import com.example.travelbuddy.data.rules.validator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
@@ -16,7 +17,7 @@ class loginviewmodel :ViewModel(){
     var success = mutableStateOf(false)
     var failure = mutableStateOf(false)
     var logout = mutableStateOf(false)
-    fun onevent(event:loginuievent){
+    fun onevent(event: loginuievent){
 
         when(event){
             is loginuievent.emailchanged -> {

@@ -1,4 +1,4 @@
-package com.example.travelbuddy.data
+package com.example.travelbuddy.features.login.forgetpassword
 
 //it holds value
 data class fpuistate (

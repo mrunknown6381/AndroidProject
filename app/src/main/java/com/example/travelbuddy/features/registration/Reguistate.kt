@@ -1,4 +1,4 @@
-package com.example.travelbuddy.data
+package com.example.travelbuddy.features.registration
 //it holds value
 data class reguistate(
     var fname :String = "",

@@ -1,4 +1,4 @@
-package com.example.travelbuddy.screen
+package com.example.travelbuddy.features.registration
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

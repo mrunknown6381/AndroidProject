@@ -1,4 +1,4 @@
-package com.example.travelbuddy.screen
+package com.example.travelbuddy.features.login.forgetpassword
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -23,20 +23,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.travelbuddy.R
 import com.example.travelbuddy.appcomponents.basetextfeild
 import com.example.travelbuddy.appcomponents.loadanim
 import com.example.travelbuddy.appcomponents.textbuttonRL
-import com.example.travelbuddy.appcomponents.textbuttonwlcm
 import com.example.travelbuddy.data.dimens
-import com.example.travelbuddy.data.fpuievent
-import com.example.travelbuddy.data.fpviewmodel
-import com.example.travelbuddy.data.loginuievent
-import com.example.travelbuddy.navigation.screens
+import com.example.travelbuddy.navigation.separate.routes
 
 
 @Composable
-fun forgetpass(navController: NavController, fpviewmodel: fpviewmodel = viewModel()) {
+fun forgetpass(navController: NavHostController, fpviewmodel: fpviewmodel = viewModel()) {
     val context = LocalContext.current
     Box(
         modifier = Modifier
@@ -52,7 +49,7 @@ fun forgetpass(navController: NavController, fpviewmodel: fpviewmodel = viewMode
             ){
                 if(fpviewmodel.success.value){
                     Toast.makeText(context,"Reset Link Sent to Your Mail", Toast.LENGTH_SHORT).show()
-                    navController.navigate(screens.Screenlogin.route)
+                    navController.navigate(routes.Screenlogin.routes)
                 }
                 if (fpviewmodel.failure.value){
                     Toast.makeText(context,"Invalid Credential", Toast.LENGTH_SHORT).show()

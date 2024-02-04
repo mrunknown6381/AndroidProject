@@ -1,4 +1,4 @@
-package com.example.travelbuddy.screen
+package com.example.travelbuddy.features.guide.onboarding
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,8 +19,6 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.travelbuddy.data.Page
-import com.example.travelbuddy.data.pages
 import com.example.travelbuddy.data.dimens.MP
 import com.example.travelbuddy.data.dimens.MP1
 import com.example.travelbuddy.ui.theme.TravelBuddyTheme

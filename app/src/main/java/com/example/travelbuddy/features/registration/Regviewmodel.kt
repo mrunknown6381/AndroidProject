@@ -1,4 +1,4 @@
-package com.example.travelbuddy.data
+package com.example.travelbuddy.features.registration
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
@@ -14,7 +14,7 @@ class regviewmodel ():ViewModel() {
     var signupinprogress = mutableStateOf(false)
     var success = mutableStateOf(false)
     var failure = mutableStateOf(false)
-    fun onevent(event:reguievent){
+    fun onevent(event: reguievent){
         when(event){
             is reguievent.fnamechanged -> {
                 reguistate.value = reguistate.value.copy(

@@ -1,4 +1,4 @@
-package com.example.travelbuddy.screen
+package com.example.travelbuddy.features.guide.onboarding
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -23,11 +23,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.travelbuddy.appcomponents.Pageindicator
-import com.example.travelbuddy.data.pages
 import com.example.travelbuddy.appcomponents.textbutton
 import com.example.travelbuddy.data.dimens.MP
 import com.example.travelbuddy.data.dimens.pageindicatorwidth
-import com.example.travelbuddy.navigation.screens
+import com.example.travelbuddy.navigation.separate.routes
 import kotlinx.coroutines.launch
 
 @RequiresApi(Build.VERSION_CODES.S)
@@ -73,7 +72,7 @@ fun onboardingscreen(navController: NavController) {
 
                     scope.launch {
                         if(pagerState.currentPage == 2){
-                            navController.navigate(screens.Screenwelcome.route)
+                            navController.navigate(routes.Screenwelcome.routes)
                         }else{
                             pagerState.animateScrollToPage(
                                 page = pagerState.currentPage+1
