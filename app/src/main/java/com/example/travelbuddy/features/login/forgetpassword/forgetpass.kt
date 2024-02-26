@@ -22,14 +22,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.travelbuddy.R
 import com.example.travelbuddy.appcomponents.basetextfeild
 import com.example.travelbuddy.appcomponents.loadanim
 import com.example.travelbuddy.appcomponents.textbuttonRL
 import com.example.travelbuddy.data.dimens
-import com.example.travelbuddy.navigation.separate.routes
+import com.example.travelbuddy.navigation.routes
 
 
 @Composable

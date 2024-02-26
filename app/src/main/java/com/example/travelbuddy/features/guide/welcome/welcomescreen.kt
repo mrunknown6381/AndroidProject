@@ -19,13 +19,13 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.travelbuddy.appcomponents.textbuttonwlcm
 import com.example.travelbuddy.data.dimens
-import com.example.travelbuddy.navigation.separate.routes
+import com.example.travelbuddy.navigation.routes
 
 @Composable
-fun welcomescreen(navController: NavController) {
+fun welcomescreen(navController: NavHostController) {
 
     val g7 = Brush.verticalGradient(
         0.0f to Color(0xFF764BA2),

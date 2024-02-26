@@ -1,4 +1,4 @@
-package com.example.travelbuddy.navigation.separate
+package com.example.travelbuddy.navigation
 
 sealed class routes(val routes:String){
     object Screenonboarding : routes(routes = "onboarding")
@@ -13,4 +13,8 @@ sealed class routes(val routes:String){
     object wishlistscreen : routes(routes = "wishlist")
     object profilescreen : routes(routes = "profile")
     object bottombar : routes(routes = "bottom_nav")
+    object editprofile : routes(routes = "edit_profile")
+    object catselection : routes(routes = "category_selection")
+    object privacypolicy : routes(routes = "privacy_policy")
+
 }

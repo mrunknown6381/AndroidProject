@@ -9,7 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
-import com.example.travelbuddy.navigation.separate.navgraphex
+import com.example.travelbuddy.navigation.navgraphex
 import com.example.travelbuddy.ui.theme.TravelBuddyTheme
 
 

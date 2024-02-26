@@ -2,14 +2,31 @@ package com.example.travelbuddy.features.login.login
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.travelbuddy.features.registration.regviewmodel
 import com.example.travelbuddy.data.rules.validator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
 
 //it captures the event and update or changes the state
 class loginviewmodel :ViewModel(){
+    val auth = FirebaseAuth.getInstance()
+    val db = FirebaseDatabase.getInstance()
+    val userRef = db.getReference("users")
+
+    private val _firebaseUser = MutableLiveData<FirebaseUser>()
+    val firebaseuser: LiveData<FirebaseUser> = _firebaseUser
+
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> = _error
+
+    init {
+        _firebaseUser.value = auth.currentUser
+    }
     private val Tag = regviewmodel::class.simpleName
     var loginuistate = mutableStateOf(loginuistate())
     var allvalidationpassed = mutableStateOf(false)
@@ -49,6 +66,8 @@ class loginviewmodel :ViewModel(){
                 if (it.isSuccessful){
                     success.value = true
                     signininprogress.value = false
+                    _firebaseUser.postValue(auth.currentUser)
+
                 }
             }
             .addOnFailureListener{

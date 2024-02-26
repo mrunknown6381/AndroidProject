@@ -15,24 +15,34 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.travelbuddy.appcomponents.Pageindicator
 import com.example.travelbuddy.appcomponents.textbutton
 import com.example.travelbuddy.data.dimens.MP
 import com.example.travelbuddy.data.dimens.pageindicatorwidth
-import com.example.travelbuddy.navigation.separate.routes
+import com.example.travelbuddy.navigation.routes
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 
 @RequiresApi(Build.VERSION_CODES.S)
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun onboardingscreen(navController: NavController) {
+fun onboardingscreen(navController: NavHostController) {
+    val firebaseuser = FirebaseAuth.getInstance().currentUser
+    LaunchedEffect(firebaseuser){
+        if(firebaseuser!= null){
+            navController.navigate(routes.bottombar.routes)
+        }
+    }
+
+
 
     Column(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(initialPage = 0) {

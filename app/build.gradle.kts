@@ -12,6 +12,7 @@ android {
     namespace = "com.example.travelbuddy"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.example.travelbuddy"
         minSdk = 26
@@ -60,6 +61,13 @@ dependencies {
     //data store
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("com.google.dagger:hilt-android:2.48.1")
+
+    implementation("com.google.firebase:firebase-firestore:24.10.1")
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+    implementation("androidx.compose.material3:material3-android:1.2.0")
+
+
+
     kapt("com.google.dagger:hilt-android-compiler:2.48.1")
     //navigation
     implementation("androidx.navigation:navigation-compose:2.7.6")
@@ -70,7 +78,7 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
+//    implementation("androidx.compose.material3:material3")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -83,8 +91,14 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended-android:1.6.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
     implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
+
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
-    implementation("com.google.gms:google-services:4.4.0")
+    implementation("com.google.firebase:firebase-storage")
+    implementation("com.google.firebase:firebase-database")
+
+
+    implementation("io.coil-kt:coil-compose:2.5.0")
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.0")
 }
 

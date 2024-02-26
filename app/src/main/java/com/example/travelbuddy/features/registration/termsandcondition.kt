@@ -1,13 +1,23 @@
 package com.example.travelbuddy.features.registration
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBackIosNew
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -18,17 +28,28 @@ import com.example.travelbuddy.data.dimens
 import com.example.travelbuddy.ui.theme.text
 
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun termsandcondition(navController: NavController) {
+
+    Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
+        CenterAlignedTopAppBar(title = {
+            Text(text = "Terms And Condition")
+        },colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            titleContentColor = MaterialTheme.colorScheme.primary,
+        ), navigationIcon = {
+            IconButton(onClick = { navController.popBackStack() }) {
+                Icon(imageVector = Icons.Default.ArrowBackIosNew, contentDescription = null)
+            }
+        })
+    }) {
     Column (
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top
     ){
-        Spacer(modifier = Modifier.height(50.dp))
-        Text(text = "Terms and Condition", textAlign = TextAlign.Center, modifier = Modifier.padding(horizontal = dimens.MP1), style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
-            color = MaterialTheme.colorScheme.primary
-        )
-        Spacer(modifier = Modifier.height(40.dp))
+        Spacer(modifier = Modifier.height(125.dp))
         Text(text = "Introduction", textAlign = TextAlign.Left, modifier = Modifier.padding(horizontal = dimens.MP1), style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
             color = MaterialTheme.colorScheme.primary)
         Spacer(modifier = Modifier.height(7.dp))
@@ -71,4 +92,4 @@ fun termsandcondition(navController: NavController) {
         Text(text = " For questions or concerns, contact Travel Buddy at support@travelbuddy.com.", textAlign = TextAlign.Left, modifier = Modifier.padding(horizontal = dimens.MP1), style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.text)
 }
-}
+}}

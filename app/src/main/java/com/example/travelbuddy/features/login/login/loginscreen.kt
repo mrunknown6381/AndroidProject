@@ -27,7 +27,6 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.travelbuddy.R
 import com.example.travelbuddy.appcomponents.clickabletextf
@@ -37,7 +36,7 @@ import com.example.travelbuddy.appcomponents.passtextfeild
 import com.example.travelbuddy.appcomponents.textbuttonRL
 import com.example.travelbuddy.appcomponents.textfeild
 import com.example.travelbuddy.data.dimens
-import com.example.travelbuddy.navigation.separate.routes
+import com.example.travelbuddy.navigation.routes
 
 
 @Composable
@@ -66,7 +65,7 @@ fun loginscreen(navController: NavHostController, loginviewmodel: loginviewmodel
             passtextfeild(modifier = Modifier.fillMaxWidth(), label = "Password", trailing = "",
                 painterResource(id = R.drawable.password), onTextSelected = {
                     loginviewmodel.onevent(loginuievent.passchanged(it))
-                })
+                },errorStatus = loginviewmodel.loginuistate.value.passerr)
             Spacer(modifier = Modifier.height(5.dp))
             Box (modifier = Modifier
                 .padding(5.dp)
@@ -116,6 +115,7 @@ private fun topsection() {
                 contentDescription = null
             )
             Spacer(modifier = Modifier.width(7.dp))
+
             Column {
                 Text(
                     text = "Travel Buddy",

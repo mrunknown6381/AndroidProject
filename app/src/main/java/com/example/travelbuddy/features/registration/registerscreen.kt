@@ -28,7 +28,6 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.travelbuddy.R
 import com.example.travelbuddy.appcomponents.checkbox
@@ -38,18 +37,18 @@ import com.example.travelbuddy.appcomponents.passtextfeild
 import com.example.travelbuddy.appcomponents.textbuttonRL
 import com.example.travelbuddy.appcomponents.textfeild
 import com.example.travelbuddy.data.dimens
-import com.example.travelbuddy.navigation.separate.routes
+import com.example.travelbuddy.navigation.routes
 
 @Composable
 fun registerscreen(navController: NavHostController, regviewmodel: regviewmodel = viewModel()) {
     val context = LocalContext.current
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
         topsection1()
-        Spacer(modifier = Modifier.height(36.dp))
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -64,11 +63,12 @@ fun registerscreen(navController: NavHostController, regviewmodel: regviewmodel 
                 Toast.makeText(context,"Invalid Credential",Toast.LENGTH_SHORT).show()
             }
 
-            textfeild(modifier = Modifier.fillMaxWidth(), label = "First name",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(
-                reguievent.fnamechanged(it))},errorStatus = regviewmodel.reguistate.value.fnameerr)
+            Spacer(modifier = Modifier.height(25.dp))
+            textfeild(modifier = Modifier.fillMaxWidth(), label = "Name",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(
+                reguievent.namechanged(it))},errorStatus = regviewmodel.reguistate.value.nameerr)
             Spacer(modifier = Modifier.height(15.dp))
-            textfeild(modifier = Modifier.fillMaxWidth(), label = "Last name",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(
-                reguievent.lnamechanged(it))},errorStatus = regviewmodel.reguistate.value.lnameerr)
+            textfeild(modifier = Modifier.fillMaxWidth(), label = "Username",painterResource(id = R.drawable.name), onTextSelected = {regviewmodel.onevent(
+                reguievent.unamechanged(it))},errorStatus = regviewmodel.reguistate.value.unameerr)
             Spacer(modifier = Modifier.height(15.dp))
             textfeild(modifier = Modifier.fillMaxWidth(), label = "Email",painterResource(id = R.drawable.email), onTextSelected = {regviewmodel.onevent(
                 reguievent.emailchanged(it))},errorStatus = regviewmodel.reguistate.value.emailerr)
@@ -110,7 +110,7 @@ fun topsection1() {
             contentDescription = null
         )
         Row(
-            modifier = Modifier.padding(top = 120.dp),
+            modifier = Modifier.padding(top = 70.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
