@@ -147,7 +147,7 @@ class regviewmodel ():ViewModel() {
     private fun addUserDb(uname: String, email: String,name: String) {
         val userid = auth.currentUser?.uid
         val user = usermodel(id = null,userid = userid.toString(),name = name.toString(), username = uname.toString(),
-            email = email.toString(), bio = "Set Your Bio", avtar = "").toMap()
+            email = email.toString(), bio = "Set Your Bio", city = "").toMap()
 
         FirebaseFirestore.getInstance().collection("users").document("$userid")
             .set(user)

@@ -29,6 +29,7 @@ import com.example.travelbuddy.ui.theme.text
 import com.example.travelbuddy.ui.theme.textfieldcontainer
 import com.example.travelbuddy.ui.theme.unfocusedText
 
+
 //function that holds textfield and their properties
 @Composable
 fun textfeild(modifier: Modifier,label:String,painterResource: Painter,onTextSelected: (String) -> Unit,errorStatus:Boolean = false) {
@@ -48,10 +49,10 @@ fun textfeild(modifier: Modifier,label:String,painterResource: Painter,onTextSel
         singleLine = true,
         maxLines = 1,
         colors = TextFieldDefaults.colors(
-            unfocusedPlaceholderColor = MaterialTheme.colorScheme.unfocusedText,
+            unfocusedPlaceholderColor = unfocusedText,
             focusedPlaceholderColor = MaterialTheme.colorScheme.text,
-            unfocusedContainerColor = MaterialTheme.colorScheme.textfieldcontainer,
-            focusedContainerColor = MaterialTheme.colorScheme.textfieldcontainer,
+            unfocusedContainerColor = textfieldcontainer,
+            focusedContainerColor = textfieldcontainer,
         ),
 //        trailingIcon = {
 //            TextButton(onClick = {}) {
@@ -95,10 +96,10 @@ fun passtextfeild(modifier: Modifier,label:String,trailing:String,painterResourc
             localFocusManager.clearFocus()
         },
         colors = TextFieldDefaults.colors(
-            unfocusedPlaceholderColor = MaterialTheme.colorScheme.unfocusedText,
+            unfocusedPlaceholderColor = unfocusedText,
             focusedPlaceholderColor = MaterialTheme.colorScheme.text,
-            unfocusedContainerColor = MaterialTheme.colorScheme.textfieldcontainer,
-            focusedContainerColor = MaterialTheme.colorScheme.textfieldcontainer,
+            unfocusedContainerColor = textfieldcontainer,
+            focusedContainerColor = textfieldcontainer,
         ),
         trailingIcon = {
             val iconImage = if(passwordVisible.value){
@@ -142,10 +143,10 @@ fun basetextfeild(modifier: Modifier,label:String,trailing:String,painterResourc
         singleLine = true,
         maxLines = 1,
         colors = TextFieldDefaults.colors(
-            unfocusedPlaceholderColor = MaterialTheme.colorScheme.unfocusedText,
+            unfocusedPlaceholderColor = unfocusedText,
             focusedPlaceholderColor = MaterialTheme.colorScheme.text,
-            unfocusedContainerColor = MaterialTheme.colorScheme.textfieldcontainer,
-            focusedContainerColor = MaterialTheme.colorScheme.textfieldcontainer,
+            unfocusedContainerColor = textfieldcontainer,
+            focusedContainerColor = textfieldcontainer,
         ),
         trailingIcon = {
             TextButton(onClick = {}) {
@@ -162,3 +163,4 @@ fun basetextfeild(modifier: Modifier,label:String,trailing:String,painterResourc
 
     )
 }
+

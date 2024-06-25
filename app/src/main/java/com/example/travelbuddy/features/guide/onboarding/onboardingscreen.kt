@@ -35,12 +35,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun onboardingscreen(navController: NavHostController) {
-    val firebaseuser = FirebaseAuth.getInstance().currentUser
-    LaunchedEffect(firebaseuser){
-        if(firebaseuser!= null){
-            navController.navigate(routes.bottombar.routes)
-        }
-    }
+
 
 
 

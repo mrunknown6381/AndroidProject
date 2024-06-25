@@ -67,6 +67,10 @@ val md_theme_dark_surfaceTint = Color(0xFFD0BCFF)
 val md_theme_dark_outlineVariant = Color(0xFF49454F)
 val md_theme_dark_scrim = Color(0xFF000000)
 
+val BlueSky= Color(0xFF4478a9)
+val NightSky =  Color(0xFF333333)
+val BorderColor = Color(0x40000000)
+
 
 val seed = Color(0xFF6750A4)
 
@@ -74,10 +78,21 @@ val ColorScheme.text
 @Composable
 get() = if (isSystemInDarkTheme()) Color.White else Color.Black
 
-val ColorScheme.unfocusedText
+val ColorScheme.pure
+    @Composable
+    get() = if (isSystemInDarkTheme()) Color(0xFFFFFFFF) else Color(0xFF000000)
+val pure2
+    @Composable
+    get() = if (isSystemInDarkTheme()) Color(0xFF000000) else Color(0xFFFFFFFF)
+
+val unfocusedText
     @Composable
     get() = if (isSystemInDarkTheme()) Color(0xFF94A388) else Color(0xFF475569)
 
-val ColorScheme.textfieldcontainer
+val textfieldcontainer
     @Composable
     get() = if (isSystemInDarkTheme()) Color(0xFF334155).copy(0.6f) else Color(0xFFF1F5F9)
+
+val Cardcontainer
+    @Composable
+    get() = if (isSystemInDarkTheme()) Color(0xFF25191D) else Color(0XFFE4F4F3)

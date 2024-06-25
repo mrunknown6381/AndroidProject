@@ -16,5 +16,16 @@ sealed class routes(val routes:String){
     object editprofile : routes(routes = "edit_profile")
     object catselection : routes(routes = "category_selection")
     object privacypolicy : routes(routes = "privacy_policy")
+    object loading : routes(routes = "load_screen")
+    object details:routes(routes = "placeDetails")
+    object catPlaces:routes(routes = "catPlace")
+    object detailsCity:routes(routes = "detailsCity")
+    object hotelDetails:routes(routes = "detailsHotel")
+    object restoDetails:routes(routes = "detailsResto")
+    object locreq:routes(routes = "location_request")
+    object initCat:routes(routes = "category_request")
+    object exPlans:routes(routes = "explore_plans")
+    object planDetails:routes(routes = "planDetails")
+
 
 }

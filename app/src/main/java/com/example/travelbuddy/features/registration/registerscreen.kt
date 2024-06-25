@@ -57,7 +57,7 @@ fun registerscreen(navController: NavHostController, regviewmodel: regviewmodel 
         ) {
             if(regviewmodel.success.value){
                 Toast.makeText(context,"Registration Success",Toast.LENGTH_SHORT).show()
-                navController.navigate(routes.Screenlogin.routes)
+                navController.navigate(routes.initCat.routes)
             }
             if (regviewmodel.failure.value){
                 Toast.makeText(context,"Invalid Credential",Toast.LENGTH_SHORT).show()
@@ -87,7 +87,7 @@ fun registerscreen(navController: NavHostController, regviewmodel: regviewmodel 
                 .fillMaxWidth()
                 .fillMaxHeight(0.8f), contentAlignment = Alignment.Center){
                clickabletextr(value = stringResource(id = R.string.login), onTextSelected = {
-                   navController.navigate(routes.Screenlogin.routes)
+                   navController.navigate(routes.initCat.routes)
                })
             }
            if (regviewmodel.signupinprogress.value){

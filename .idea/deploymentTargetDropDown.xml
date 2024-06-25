@@ -2,22 +2,35 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="DarkModeSwitchPreview">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>
-      <entry key="btnanim">
+      <entry key="explorePlan">
+        <State>
+          <runningDeviceTargetSelectedWithDropDown>
+            <Target>
+              <type value="RUNNING_DEVICE_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="SERIAL_NUMBER" />
+                  <value value="10BD1T1ELS0005N" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </runningDeviceTargetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-04-17T11:43:03.702626900Z" />
+        </State>
+      </entry>
+      <entry key="test">
         <State />
       </entry>
-      <entry key="forgetpass">
+      <entry key="test (1)">
         <State />
       </entry>
-      <entry key="loginscreen">
-        <State />
-      </entry>
-      <entry key="obp">
-        <State />
-      </entry>
-      <entry key="progress">
+      <entry key="test (2)">
         <State />
       </entry>
     </value>
